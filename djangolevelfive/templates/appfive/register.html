@@ -1,0 +1,15 @@
+{% extends 'appfive/basic.html' %}
+{% load static %}
+{% block base_body %}
+  {% if registered %}
+  <h1>Thanks For Register</h1>
+  {% else %}
+  <form method="post">
+    {{user_form.as_p}}
+    {% csrf_token %}
+    {{usermodel_form.as_p}}
+    <input type="submit" class="btn btn-primary" value="Submit">
+  </form>
+  {% endif %}
+
+{% endblock %}

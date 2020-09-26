@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+{% extends 'appfive/basic.html' %}
+{% block base_body %}
+  <h1>Login</h1>
+  <form action="{% url 'appfive:user_login' %}" method="post">  {% csrf_token %}
+      <label for="username">Username:</label>
+      <input type="text" name="username" placeholder="Enter Username">
+      <label for="password">Password:</label>
+      <input type="password" name="password" value="">
+      <input type="submit" class='btn btn-primary' value="Log In">
+  </form>
+{% endblock %}
